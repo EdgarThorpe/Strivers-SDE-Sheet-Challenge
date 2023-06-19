@@ -17,6 +17,8 @@ public:
 class Solution {
 public:
     Node* copyRandomList(Node* head) {
+
+        // Method - 1: Hashmap
         unordered_map<Node*, Node*>hm;
         for(Node *curr = head; curr!=NULL; curr=curr->next){
             hm[curr] = new Node (curr->val);
@@ -27,4 +29,6 @@ public:
         }
         return hm[head];   
     }
+
+    // Method - 2: 
 };
