@@ -9,7 +9,6 @@ public:
     }
 
     
-
     int smallestDivisor(vector<int>& nums, int threshold) {
         int n = nums.size();
         int res = INT_MAX;
@@ -20,61 +19,24 @@ public:
             }
         }
 
-        // int maxVal = nums[0];  // Assume the first element is the maximum
-    
-        // for (int num : nums) {
-        //     if (num > maxVal) {
-        //         maxVal = num;  // Update the maximum value
-        //     }
-        // }
-        // int l = 0, h = maxVal;
+        int l = 1, h = lar;
 
 
-//         int ans = 0;
-//         while (l <= h) {
-//             int mid = h + ((l - h) / 2);
-//             long long result = binSearch(nums, mid);
-//             if (result <= threshold) {
-//                 ans = mid;
-//                 h = mid - 1;
-//             }
-//             else {
-//                 l = mid + 1;
-//             }
-//         }
-//         return ans;
-//     }
-// };
-
-
-
-    
-        int ans = -1;
-        int l = 1;
-        int h = lar;
-        
-
+        int ans = 0;
         while (l <= h) {
-            int mid = (l + h) / 2;
-            int result = binSearch(nums, mid);
-            // If current divisor does not exceed threshold, 
-            // then it can be our answer, but also try smaller divisors
-            // thus change search space to left half.
+            int mid = h + ((l - h) / 2);
+            long long result = binSearch(nums, mid);
             if (result <= threshold) {
                 ans = mid;
                 h = mid - 1;
             }
-            // Otherwise, we need a bigger divisor to reduce the result sum
-            // thus change search space to right half.
             else {
                 l = mid + 1;
             }
         }
-        
         return ans;
     }
 };
-
 
 
 // class Solution {
