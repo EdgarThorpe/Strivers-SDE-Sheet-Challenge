@@ -14,11 +14,12 @@ public:
         int n = nums.size();
         int res = INT_MAX;
         int lar = nums[0];
-        // for (int i = 1; i < n; i++) {
-        //     if (nums[i] >= lar) {
-        //         lar = nums[i];
-        //     }
-        // }
+        for (int i = 1; i < n; i++) {
+            if (nums[i] >= lar) {
+                lar = nums[i];
+            }
+        }
+
         // int maxVal = nums[0];  // Assume the first element is the maximum
     
         // for (int num : nums) {
@@ -50,7 +51,7 @@ public:
     
         int ans = -1;
         int l = 1;
-        int h = *max_element(nums.begin(), nums.end());
+        int h = lar;
         
 
         while (l <= h) {
