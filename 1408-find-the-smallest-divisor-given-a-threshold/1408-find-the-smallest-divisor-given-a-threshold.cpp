@@ -1,12 +1,12 @@
-// class Solution {
-// public:
-//     int binSearch(vector<int>& nums, int& divisor) {
-//         int result = 0;
-//         for (int& num : nums) {
-//             result += ceil((1.0 * num) / divisor);
-//         }
-//         return result;
-//     }
+class Solution {
+public:
+    int binSearch(vector<int>& nums, int& divisor) {
+        int result = 0;
+        for (int& num : nums) {
+            result += ceil((1.0 * num) / divisor);
+        }
+        return result;
+    }
     
 
 //     int smallestDivisor(vector<int>& nums, int threshold) {
@@ -35,16 +35,8 @@
 //     }
 // };
 
-class Solution {
-public:
-    // Return the sum of division results with 'divisor'.
-    int findDivisionSum(vector<int>& nums, int& divisor) {
-        int result = 0;
-        for (int& num : nums) {
-            result += ceil((1.0 * num) / divisor);
-        }
-        return result;
-    }
+
+
     
     int smallestDivisor(vector<int>& nums, int threshold) {
         int ans = -1;
@@ -55,7 +47,7 @@ public:
         // Iterate using binary search on all divisors.
         while (low <= high) {
             int mid = (low + high) / 2;
-            int result = findDivisionSum(nums, mid);
+            int result = binSearch(nums, mid);
             // If current divisor does not exceed threshold, 
             // then it can be our answer, but also try smaller divisors
             // thus change search space to left half.
