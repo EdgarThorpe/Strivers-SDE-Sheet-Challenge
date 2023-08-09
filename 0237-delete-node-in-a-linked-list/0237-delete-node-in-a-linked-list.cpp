@@ -16,7 +16,9 @@ public:
 
         ListNode* temp = node->next;
         node->val = temp->val;
-        node->next=node->next->next;
+        // node->next=node->next->next;
+        // OR
+        node->next = temp->next;
         delete temp;
 
     }
