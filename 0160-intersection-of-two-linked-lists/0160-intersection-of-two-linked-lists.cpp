@@ -89,8 +89,8 @@ public:
         ListNode* pB = headB;
 
         while(pA!=pB){
-            pA = pA == NULL ? headA: pA->next;
-            pB = pB == NULL ? headB: pB->next;
+            pA = pA == NULL ? headB: pA->next;
+            pB = pB == NULL ? headA: pB->next;
 
         }
         return pA;
