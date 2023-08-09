@@ -25,23 +25,23 @@ public:
             if(head1)
             {
                 l+=head1->val;
+                head1=head1->next;
             }
             if(head2)
             {
                 l+=head2->val;
+                head2=head2->next;
             }
             ListNode* y=new ListNode(l%10);
             head3->next=y;
             head3=y;
             carry=l/10;
-            if(head1)
-            {
-                head1=head1->next;
-            }
-            if(head2)
-            {
-                head2=head2->next;
-            }
+            // if(head1)
+            // {
+            // }
+            // if(head2)
+            // {
+            // }
 
         }
         if(carry)
