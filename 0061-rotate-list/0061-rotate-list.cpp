@@ -47,7 +47,7 @@ public:
             len++;
         }
 
-        k %= len;
+        k%=len;
 
         if(k==0) return head;
 
@@ -56,9 +56,30 @@ public:
             temp=temp->next;
         }
         tail->next = head;
-        head=temp->next;
+        head = temp->next;
         temp->next = NULL;
+
         return head;
+
+        // int len = 1;
+        // ListNode* tail = head;
+        // while(tail->next!=NULL){
+        //     tail=tail->next;
+        //     len++;
+        // }
+
+        // k %= len;
+
+        // if(k==0) return head;
+
+        // ListNode* temp = head;
+        // for(int i = 1; i < len-k; i++){
+        //     temp=temp->next;
+        // }
+        // tail->next = head;
+        // head=temp->next;
+        // temp->next = NULL;
+        // return head;
 
 
 
