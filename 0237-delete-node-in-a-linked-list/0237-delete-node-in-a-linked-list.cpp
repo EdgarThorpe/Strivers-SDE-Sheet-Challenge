@@ -14,12 +14,12 @@ public:
         // node->next  = temp->next;
         // delete temp ;
 
-        ListNode* temp = node->next;
-        node->val = temp->val;
-        // node->next=node->next->next;
+        // ListNode* temp = node->next;
+        node->val = node->next->val;
+        node->next=node->next->next;
         // OR
-        node->next = temp->next;
-        delete temp;
+        // node->next = temp->next;
+        // delete temp;
 
     }
 };
