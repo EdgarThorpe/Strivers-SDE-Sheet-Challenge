@@ -16,7 +16,7 @@ public:
         maxH.push(num);
         minH.push(maxH.top());
         maxH.pop();
-        if(maxH.size() < minH.size()){
+        if(maxH.size() != minH.size()){
             maxH.push(minH.top());
             minH.pop();
         }
