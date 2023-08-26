@@ -36,6 +36,8 @@ public:
                 }
                 if(prev->right==NULL){
                     prev->right = curr;
+                    // For preorder:-
+                    // preorder.push_back(curr->val);
                     curr=curr->left;
                 }
                 else{
@@ -44,7 +46,7 @@ public:
                     //2. print curr
                     //3, make curr go right
                     prev->right=NULL;
-                    inorder.push_back(curr->val);
+                    inorder.push_back(curr->val); //commnet for preorder
                     curr=curr->right;
                 }
             }
