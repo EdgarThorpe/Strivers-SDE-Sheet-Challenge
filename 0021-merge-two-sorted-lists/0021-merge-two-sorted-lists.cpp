@@ -35,15 +35,13 @@ public:
         // return head;
 
         if(a==NULL) return b;
-        if(b==NULL) return a;
-
+        if (b==NULL) return a;
         ListNode* head = NULL;
         ListNode* tail = NULL;
-
         if(a->val<=b->val){
             head = a;
             tail = a;
-            a=a->next;
+            a = a->next;
         }
         else{
             head = b;
@@ -51,21 +49,23 @@ public:
             b=b->next;
         }
         while(a!=NULL && b!=NULL){
-            if(a->val<b->val){
+            if(a->val<=b->val){
                 tail->next = a;
                 tail = a;
-                a= a->next;
+                a=a->next;
             }
             else{
                 tail->next = b;
                 tail = b;
-                b= b->next;
-                
+                b=b->next;
             }
         }
-
-        if(b==NULL) tail->next = a;
-        else tail->next = b;
+        if(a){
+            tail->next = a;
+        }
+        else{
+            tail->next = b;
+        }
 
         return head;
     }
