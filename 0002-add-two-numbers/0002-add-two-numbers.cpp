@@ -13,15 +13,13 @@ public:
     ListNode* addTwoNumbers(ListNode* first, ListNode* second) {
         ListNode* head1 = first;
         ListNode* head2 = second;
-        int sum = (first->val+second->val);
+        int sum = (head1->val)+(head2->val);
+        int carry = sum/10;
+        ListNode* head3 = new ListNode(sum%10);
+        ListNode* curr = head3;
+        cout<<head3->val;
         head1=head1->next;
         head2=head2->next;
-
-        int carry = sum/10;
-
-        ListNode* head3 = new ListNode(sum%10);
-        ListNode* ret = head3;
-
         while(head1 || head2){
             int l = carry;
             if(head1){
@@ -33,28 +31,17 @@ public:
                 head2=head2->next;
             }
             ListNode* y = new ListNode(l%10);
-            carry=l/10;
             head3->next = y;
-            head3 = head3->next;
+            head3 = y;
+            carry = l/10;
         }
+
         if(carry){
-            ListNode* carryNode = new ListNode(carry);
-            head3->next = carryNode;
+            ListNode* bindu = new ListNode(carry);
+            head3->next = bindu;
         }
 
-        return ret;
-
-
-
-
-
-
-
-
-
-
-
-
+        return curr;
 
 
 
